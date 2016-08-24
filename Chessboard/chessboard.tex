@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage{chessboard}
+\storechessboardstyle{8x8}{maxfield=h8}
+\begin{document}
+    \def\mylabelformat{%
+    {\makebox[0pt][c]{%
+    {$x_\arabic{filelabel}$}
+    }}}
+    \begin{tabular}{cc}
+        \chessboard[style=8x8,setwhite={Qa4, Qb5, Qc3, Qd7, Qe5, Qf2, Qg6, Qh2}, labelbottomformat=\mylabelformat, showmover=false]
+    \end{tabular}
+\end{document}
