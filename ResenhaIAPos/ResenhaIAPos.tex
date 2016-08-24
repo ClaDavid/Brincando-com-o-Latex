@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{indentfirst}
+\usepackage{geometry}
+\geometry{total={210mm,297mm},
+left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+\linespread{1.3}
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% my own titles
+\makeatletter
+\renewcommand{\maketitle}{
+\begin{center}
+\vspace{2ex}
+{\huge \textsc{\@title}}
+\vspace{1ex}
+\\
+\linia\\
+\@author \hfill \@date
+\vspace{4ex}
+\end{center}
+}
+\makeatother
+
+% custom footers and headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{IA - Resenha}
+\cfoot{}
+\rfoot{Página \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%----------%%%----------%%%----------%%%----------%%%
+
+\begin{document}
+
+\title{Inteligência Artificial\\ Resenha de artigos}
+
+\author{Universidade Federal do ABC\\
+Clarissa Simoyama David\\
+Prof. Dr. Luiz Antonio Celiberto Junior\\}
+
+\date{16/08/2016}
+
+\maketitle
+
+Antes de ir de fato à ligação de Brooks e Turing, é importante entender um pouco a ideia que Turing tinha sobre a Inteligência Artificial. O artigo escrito por Turing começa fazendo o seguinte questionamento: podem máquinas pensar? À esta pergunta, surge a necessidade de definir os termos máquina e pensar, além de correlacionar as duas, mas utilizando conceitos tradicionais sobre estes significados, a resposta para esta pergunta é absurda. É proposto então uma nova forma para se descrever o problema, e com esta nova descrição, uma nova questão. À esta nova abordagem, Turing dá um nome: o jogo da imitação.
+
+O jogo da imitação consiste em ser jogado por três pessoas, um homem (A), uma mulher (B) e um interrogador (C). O interrogador fica em um quarto separado dos outros dois jogadores, com o objetivo de determinar qual é o homem e qual é a mulher. Cada um deles possui um pseudônimo, e ao final do jogo o interrogador os atribui para os jogadores, podendo inclusive fazer perguntas para entender as característica de cada um deles. Baseado neste jogo, é aberto um espaço para algumas questões: E se uma máquina estiver no lugar de A? O interrogador erraria tanto quanto ele erra quando o jogo é jogado por um homem e uma mulher? Estas questões substituem a pergunta original: podem máquinas pensar?
+
+Esta nova questão possui algumas vantagens, como criar uma linha bem tenuê entre capacidades físicas e intelectuais de um ser humano, além o problema poder ser formulado através de perguntas e respostas para tentativas de descobertas, podendo ser questionado qualquer comportamente humano para tais, sendo que o interrogador não pode demandar demonstrações práticas. As máquinas que podem participar do jogo são computadores digitais, por seguirem uma tabela de instruções que é similar à forma como humanos seguem regras e padrões, sendo chamados como máquinas universais, pois podem imitar qualquer máquina de estados discreta. 
+
+Levando computadores digitais em conta, e como eles são aplicados, a pergunta original pode ser mudada para a seguinte: considerando um computador digital C, será que modificando este computador para ter uma mamória adequada, aumentando assim sua velocidades para tomar ações, e provendo-o um desenvolvimento apropriado, C pode jogar satisfatoriamente a parte de A no jogo da imitação, sendo B jogado por um homem?
+
+Houveram muitas ideias contrárias ao pensamento de Turing, como pesquisas realizadas pela famosa programadora Lady Lovelace, em que ela afirma que máquinas só fazem o que nós falamos para elas fazerem. Por a tecnologia não ser avançada suficiente para a realização de fato de testes para a confirmação das ideias de Turing, ele tenta abordar de outras formas o problema, para fazer com que máquinas possam jogar o jogo da imitação.
+
+O problema então é dividido em duas partes: uma forma de programar a máquina de forma que ela simule o cérebro de uma criança (que ainda está em formação, portanto possui poucos mecanismos, porém possui grandes áreas para poderem ser preenchidas de memórias e conhecimentos); e a outra parte consiste no processo da educação, em que se é obtido conhecimentos, sendo estas duas partes fortemente conectadas. A estrutura de uma máquina simulando uma criança é equivalente à material genético, as mudanças são equivalentes à mutações e as seleções naturais são equivalentes ao julgamento do experimentador.	
+
+Como parte do processo de aprendizado, pode ser associado o sistema de punição e recompensas para as ações tomadas, sendo que ações tomadas que geram punições devem ser evitadas, enquanto ações que levam à recompensas devem ser repetidas. Além disto, é importante incluir um elemento aleatório no processo de aprendizagem, gerando diversas combinações de soluções.
+
+A maior questão é por onde deveria começar o desenvolvimento de máquinas inteligentes, seria, por exemplo, competindo contra humanos em uma partida de xadrez? Turing termina seu artigo dizendo que a resposta certa de qual área deve-se começar o desenvolvimento aida é incerta, mas que há muito a se fazer e que, futuramente, seria possível tal desenvolvimento.
+
+O artigo escrito por Brooks, \textit{Intelligence Without Reason}, questiona sobre o método tradicional da definição de Inteligência Artificial e, consequentemente, da sua aplicação para desenvolver máquinas inteligentes. Em uma de suas seções, mais especificamente na seção 2, ele fala sobre a inovação de \textit{frameworks}, pois cientistas não precisariam testar diretamente suas ideias com robôs reais, facilitando o trabalho do desenvolvimento.
+
+Há diversos pontos chaves em que os robôs podem ser caracterizados neste estilo de desenvolvimento: eles podem ser situados no mundo real diretamente; possuem uma melhora de interface, possuindo corpos, suas ações são partes da dinâmica do mundo, obtendo respostas de suas ações imediatamente; sua inteligência não é só limitada ao âmbito computacional, mas também às sensações que eles possuem através de sensores; e, por último, eles possuem ações de emergências, que são disparadas quando seu sistema interage com o mundo real, podendo ser influenciado por ações externas.
+
+Brooks foca sobre o desenvolvimento de Inteligência Artificial utilizando computadores, e com isto associa-se a ideia que Turing apresenta sobre computadores digitais, dissertando sobre o jogo da imitação. Apesar das ideias serem abordadas de maneira que poderia ser possível ser realizado este experimento, programar o computador ainda seria um grande desafio para que seu desenvolvimento pudesse fazer com que ele, de fato, se passasse por um humano, além da construção de um sistemas desses tivesse certas consequências, como a dificuldade da implementação de ponteiros e estrutura de dados.
+
+Fazendo o uso da biologia, há áreas que podem auxiliar no entendimento e otimização da Inteligência Artificial, como a psicologia e a neurociência. Nesta última, a ideia é tentar contruir sistemas inteligentes que possam agir conforme nosso cérebro age, encontrando um grande problema: o cérebro não só reage a estímulos internos e externos, mas também a diversos fatores biológicos como a influência de hormônios e outros aspectos.
+
+Para o aprendizado de sistemas inteligentes, a evolução dos conhecimentos que podem ser aprendidos possui um valor fundamental. Há ao menos 4 classes de aprendizados que podem ser adquiridos:
+ 
+\begin{itemize}
+	\item Representação do mundo real;
+	\item Aspectos das intâncias dos sensores e atuadores (calibração);
+	\item A forma que comportamentos individuais devem interagir;
+	\item Novos módulos de comportamento.
+\end{itemize}
+
+Ambos os autores concordam que em algum momento futuro poderá emergir sistemas inteligentes que possam tomar decisões próprias, de acordo com vários fatores estabelecidos que eles devem alcançar para poderem ser considerados máquinas inteligentes. Mas, ambos também concordam que este objetivo ainda está longe de ser alcançado, sendo necessários mais testes, investimentos e ver se realmente o caminho que as pesquisas no campo de Inteligência Artificial estão tomando é o caminho certo, ou se seria necessário rever caminhos diferentes para que o objetivo seja alcançado.
+
+As ideias dos autores, mesmo sendo de épocas diferentes, possuem um mesmo direcionamento: o avanço da tecnologia através de sistemas inteligentes. Na época que suas ideias foram escritas, ainda possuiam o desafio do limite de \emph{hardware}. Nos tempos atuais, com o avanço desta área, é possível a realização de pesquisas em sistemas inteligentes, sendo que atualmente temos grandes avanços nesta área: alguns poucos exemplos são robôs que conseguem imitar cachorros, robôs que estão aprendendo a como reagir em uma situação de perigo ou dor, até mesmo o avanço do tratamente de mineração de dados de \emph{bigdata}. O futuro para esta área é extremamente promissor, e o presente já está sendo feito.
+
+
+\end{document}
