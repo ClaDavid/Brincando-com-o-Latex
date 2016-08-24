@@ -1,0 +1,57 @@
+\documentclass[conference,compsoc]{IEEEtran}
+
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[backend=biber]{biblatex}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{calc}
+
+\addbibresource{referencias.bib}
+
+\begin{document}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\begin{tikzpicture}[node distance = 2cm, auto][transform canvas={scale=.5}]
+%Colocar os nós
+\node (init) [startstop] {Criar enxame inicial};
+\node (velinicial) [process, right of=init, xshift=3.5cm] {Velocidade inicial aleatória};
+\node (definepbest) [process, below of=velinicial]  {Define-se pbest/gbest inicial};
+\node (fitness) [process, below of=definepbest] {Fitness};
+\node (atualizapos) [process, below of=fitness] {Atualiza posições e velocidades};
+\node (novopbest) [decision, below of=atualizapos, yshift=-1cm] {Novo pbest/gbest};
+\node (atualizapbest) [process, right of=novopbest, xshift=3.5cm] {Atualiza pbest/gbest};
+\node (parada) [decision, below of=novopbest, yshift=-2.3cm] {Critério de parada};
+\node (solucao) [startstop, right of=parada, xshift=3.5cm] {Solução (gbest)};
+
+%Desenhar as arestas
+\draw [arrow] (init) -- (velinicial);
+\draw [arrow] (velinicial) -- (definepbest);
+\draw [arrow] (definepbest) -- (fitness);
+\draw [arrow] (fitness) -- (atualizapos);
+\draw [arrow] (atualizapos) -- (novopbest);
+\draw [arrow] (novopbest) -- node[anchor=south] {Sim}(atualizapbest);
+\draw [arrow] (novopbest) -- node[anchor=east] {Não}(parada);
+\draw [arrow] (parada) -- node[anchor=south] {Sim}(solucao);
+\draw [arrow] (parada) -| node[anchor=south west]{Não} ([xshift=-0.5cm]atualizapos.south west) |- (fitness);
+\draw [arrow] (atualizapbest) |- ($(novopbest)!.5!(parada)$);
+
+
+
+\end{tikzpicture}
+
+
+
+\end{document}
